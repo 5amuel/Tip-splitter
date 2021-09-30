@@ -12,7 +12,8 @@ const Boton = styled(Button)`
     font-family: space mono;
     padding: 5px;
     border-radius: 6px;
-    width: 150px;
+    width: 100%;
+    
 
     :focus{
         background-color: #26c2ad;
@@ -25,6 +26,7 @@ const Boton = styled(Button)`
         background-color: #26c2ad;
         color: #00474b;
     }
+
   `
 const LabelStyled = styled(InputLabel)({
     color: '#757575',
@@ -58,43 +60,42 @@ const InputPercetField = styled(TextField)
         padding:'7px 15px',
         fontWeight:'bold',
         fontFamily: 'Space Mono',
-        width:'120px',
+        width:'100%',
+        
         
     },
-})
-const InputBackground = styled(Grid)({
+    width:'100%',
     background:'#e0f2f1',
-    
 })
 
 const Botones = ({onClick}) => {
     
 return ( 
-    <Grid container item xs={12}  sx={{display:'flex', justifyContent:'center', my:1}} > 
-        <Grid item xs={12}  sx={{display:'flex', justifyContent:'left', mx:1}} >  
+    <> 
+        <Grid item xs={12}>  
             <LabelStyled >Select Tip</LabelStyled>
         </ Grid> 
-        <Grid item xs={6}  sx={{display:'flex', justifyContent:'center', my:1}} >  
+        <Grid item xs={6} md={4} sx={{display:'flex', justifyContent:'center', }} >  
             <Boton name='btn' onClick={onClick} className="" value='5' >5%</Boton>
         </Grid>
-        <Grid item xs={6}  sx={{display:'flex', justifyContent:'center', my:1}} >  
+        <Grid item xs={6} md={4} sx={{display:'flex', justifyContent:'center'}} >  
             <Boton name='btn' onClick={onClick} className="" value='10' >10%</Boton>
         </Grid>
-        <Grid item xs={6}  sx={{display:'flex', justifyContent:'center', my:1}} >  
+        <Grid item xs={6} md={4} sx={{display:'flex', justifyContent:'center'}} >  
             <Boton name='btn' onClick={onClick} className="" value='15'>15%</Boton>
         </Grid>
-        <Grid item xs={6}  sx={{display:'flex', justifyContent:'center', my:1}} >  
+        <Grid item xs={6} md={4} sx={{display:'flex', justifyContent:'center'}} >  
             <Boton name='btn' onClick={onClick} className="" value='25'>25%</Boton>
         </Grid>
-        <Grid item xs={6}  sx={{display:'flex', justifyContent:'center', my:1}} >  
+        <Grid item xs={6} md={4} sx={{display:'flex', justifyContent:'center'}} >  
             <Boton name='btn' onClick={onClick} className="" value='50'>50%</Boton>
         </Grid>
-        <Grid item xs={6}  sx={{display:'flex', justifyContent:'center', my:1}} >  
-            <InputBackground >
+        <Grid item xs={6} md={4}  sx={{display:'flex', justifyContent:'center'}} >  
+            
                 <InputPercetField id='txt' name='txt' onChange={onClick} placeholder={"Custom"} ></InputPercetField>
-            </InputBackground >
+            
         </ Grid>
-    </ Grid>
+    </ >
     );
 }
  

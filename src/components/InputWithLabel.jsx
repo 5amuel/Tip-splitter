@@ -50,8 +50,6 @@ const InputText = styled(TextField)
 
 const InputWithLabel = ({name, adornment, onChange, id}) => {
     
-
-    
     return ( 
         <>
             <LabelStyled>{name}</LabelStyled>

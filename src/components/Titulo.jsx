@@ -9,7 +9,7 @@ const MainTitle = styled(Typography)({
     fontFamily: 'monospace',
     fontWeight:'bold',
     fontSize: '22px',
-    marginTop:'40px',
+    margin:'40px',
     color:"#00474b"
   } 
 })

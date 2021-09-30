@@ -5,6 +5,7 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Botones from './Botones';
 import { useState } from 'react';
 import ResultsBox from './ResultsBox';
+import { maxHeight } from '@mui/system';
 
 const FormContenedor = () => {
     const [numberOfPersons, setNumberOfPersons] = useState(0)
@@ -72,25 +73,34 @@ const FormContenedor = () => {
         
     return ( 
         
-        <Box mt={6} mx={{xs:0, sm:10, md:25, lg:40, xl:30}} sx={{height: 800, bgcolor: '#f3f8fb', borderRadius: 8}}>
-            <Grid container >
-                <Grid  item xs={12} sm={12} sx={{p:1, m:2, mt:4}}> 
-                    <InputWithLabel id={'billInput'} name='billInput' onChange={handleBill} adornment={'$'} />
+        <Box mt={6} sx={{margin:'auto', bgcolor: '#f3f8fb', borderRadius: 5, height:'100%', maxWidth:900, minWidth:360}}>
+            <Grid container xs={12} md={12} >
+
+                <Grid item container xs={12} md={6}>
+                
+                    <Grid item xs={12} sx={{px:4, my:3}}> 
+                        <InputWithLabel id={'billInput'} name='Bill' onChange={handleBill} adornment={'$'} />
+                    </Grid> 
+
+                    <Grid container item xs={12} sx={{px:4, my:0}} spacing={2} >
+                        <Botones onClick={handleButtonFocus}/>
+                    </Grid>
+
+                    <Grid  item xs={12} sx={{px:4, mt:3, pb: 3}} > 
+                        <InputWithLabel 
+                            id={'peopleInput'}
+                            onChange={handleNumberOfPersons}
+                            adornment={<PersonAddIcon sx={{color:'#a1bbbe'}}/>}    
+                            name='Number of people'/>
+                    </Grid>
                 </Grid>
-                <Grid item container xs={12} sx={{mx:2}}>
-                    <Botones onClick={handleButtonFocus}/>
-                </Grid>
-                <Grid  item xs={12} sm={12} sx={{p:1, m:2, mt:1}}> 
-                    <InputWithLabel 
-                        id={'peopleInput'}
-                        onChange={handleNumberOfPersons}
-                        adornment={<PersonAddIcon sx={{color:'#a1bbbe'}}/>}    
-                        name='people'/>
-                        
-                </Grid>
-                <Grid container item xs={12}>
+
+
+
+                <Grid  item xs={12} sm={12} md={6} lg={6} px={4} pb={3} mt={4} >
                     <ResultsBox onClick={reset} tipPerson={resultado !== 'NaN' && resultado !== 'Infinity' && resultado} totalTip={resultadoTotal} />
                 </Grid>
+
             </Grid>
         </Box>
     );
