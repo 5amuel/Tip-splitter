@@ -48,7 +48,7 @@ const InputText = styled(TextField)
     width:'100%'
 })
 
-const InputWithLabel = ({name, adornment, onChange, value}) => {
+const InputWithLabel = ({name, adornment, onChange, id}) => {
     
 
     
@@ -57,7 +57,7 @@ const InputWithLabel = ({name, adornment, onChange, value}) => {
             <LabelStyled>{name}</LabelStyled>
             <InputBackground >
                 <InputText 
-                    value={value}
+                    id={id}
                     placeholder={"0"} 
                     onChange={onChange}
                     // sx={{width:'100%'}}

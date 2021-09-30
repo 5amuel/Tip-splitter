@@ -42,9 +42,7 @@ const ResetButton = styled(Button)`
 `
 
 
-
-
-const ResultsBox = ({tipPerson, totalTip}) => {
+const ResultsBox = ({tipPerson, totalTip, onClick}) => {
     return ( 
         <Box sx={{ mx: 2, mb:20, height:250, width:'100%', bgcolor:'#00474b', borderRadius: 4, justifyContent: 'center', display: 'flex',}}>
             <Grid item container xs={12} sx={{mx:3, my:3}}>
@@ -70,7 +68,7 @@ const ResultsBox = ({tipPerson, totalTip}) => {
                 </Grid>
                 
                 <Grid item xs={12} sx={{mt:2}}>
-                    <ResetButton>Reset</ResetButton>
+                    <ResetButton onClick={onClick}>Reset</ResetButton>
                 </Grid>
             </Grid>
         </Box>
